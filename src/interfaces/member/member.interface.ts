@@ -1,7 +1,7 @@
 ﻿type ID = string | number;
 
 export interface Member {
-  id: ID;
+  id?: ID;
   firstName: string;
   lastName: string;
   contacts: Contacts;
@@ -9,18 +9,11 @@ export interface Member {
 
   birthDate: Date;
 
-  participations: Participator[];
-}
-
-export interface Participator {
-  id: ID;
-  modality: string;
-  active: boolean;
 }
 
 interface Address {
   street: string;
-  number: number;
+  number: string;
   neighborhood: string;
   city: string;
 }

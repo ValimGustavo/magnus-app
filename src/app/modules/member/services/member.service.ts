@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { environment } from './../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -18,4 +19,14 @@ export class MemberService {
   listAll(){
     return this.http.get<Member[]>(environment.memberEndpoint)
   }
+
+  getMemberById(id:string){
+    return this.http.get<Member>(environment.memberEndpoint + '/' + id)
+  }
+
+  updateMember(member:Member){
+    return this.http.put<Member>(environment.memberEndpoint + '/' + member.id, member)
+  }
+
+  
 }

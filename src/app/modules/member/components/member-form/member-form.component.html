@@ -1,0 +1,175 @@
+<div *ngIf="mode == 'info'">
+  <button (click)="editable()">Editar</button>
+  <button>Deletar</button>
+</div>
+
+<form class="mycontainer" [formGroup]="formMember">
+  <!-- dados sobre nome -->
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label for="firstName">Nome</label>
+      <input
+        type="text"
+        class="form-control"
+        name="firstName"
+        id="firstName"
+        formControlName="firstName"
+        
+      />
+    </div>
+    <div class="form-group col-md-5">
+      <label for="lastName">Sobrenome</label>
+      <input
+        type="text"
+        class="form-control"
+        name="lastName"
+        id="lastName"
+        formControlName="lastName"
+        
+      />
+    </div>
+  </div>
+
+  <!-- dados sobre endereço -->
+  <div class="form-row" formGroupName="address">
+    <div class="form-group col-md-3">
+      <label for="street">Rua</label>
+      <input
+        type="text"
+        class="form-control"
+        name="street"
+        id="street"
+        formControlName="street"
+        
+      />
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="number">Numero</label>
+      <input
+        type="text"
+        class="form-control"
+        name="number"
+        id="number"
+        formControlName="number"
+        
+      />
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="neighborhood">Bairro</label>
+      <input
+        type="text"
+        class="form-control"
+        name="neighborhood"
+        id="neighborhood"
+        formControlName="neighborhood"
+        
+      />
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="city">Cidade</label>
+      <input
+        type="text"
+        class="form-control"
+        name="city"
+        id="city"
+        formControlName="city"
+        
+      />
+    </div>
+  </div>
+
+  <!-- dados sobre contatos -->
+  <div class="form-row" formGroupName="contacts">
+    <div class="form-group col-md-4">
+      <label for="phone">Telefone</label>
+      <input
+        type="tel"
+        class="form-control"
+        name="phone"
+        id="phone"
+        formControlName="phone"
+        
+      />
+    </div>
+    <div class="form-group col-md-4">
+      <label for="cel">Celular</label>
+      <input
+        type="tel"
+        class="form-control"
+        name="cel"
+        id="cel"
+        formControlName="cel"
+        
+      />
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="email"
+        formControlName="email"
+        
+      />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="birth">Data de nascimento</label>
+      <input
+        type="date"
+        class="form-control"
+        name="birth"
+        id="birth"
+        formControlName="birthDate"
+        
+      />
+    </div>
+  </div>
+
+  <div *ngIf="mode === 'create'">
+    <div class="form-row">
+      <div class="pull-righ">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          (click)="create()"
+          [disabled]="formMember.invalid"
+        >
+          Enviar cadastro
+        </button>
+      </div>
+      <div class="pull-righ">
+        <button type="button" class="btn btn-secondary" (click)="onCancel()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngIf="mode === 'editable'">
+    <div class="form-row">
+      <div class="pull-righ">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          (click)="update()"
+        >
+          Salvar alteraçoes
+        </button>
+      </div>
+      <div class="pull-righ">
+        <button type="button" class="btn btn-secondary" (click)="returnForList()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

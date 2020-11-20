@@ -2,7 +2,8 @@
 import { MemberCreateComponent } from './components/member-create/member-create.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GetMembersResolve } from './resolvers/get-members.service';
+import { GetMembersResolve } from './resolvers/get-members.resolve';
+import { MemberFormComponent } from './components/member-form/member-form.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,13 @@ const routes: Routes = [
         path: 'create',
         component: MemberCreateComponent,
       },
+      {
+        path:':id',
+        component: MemberFormComponent,
+        resolve: {
+          member: GetMembersResolve
+        }
+      }
     ]
   }
 
