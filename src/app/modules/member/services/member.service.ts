@@ -13,6 +13,9 @@ export class MemberService {
 
   create(member:Member):Observable<Member>{
     return this.http.post<Member>(environment.memberEndpoint, member)
+  }
 
+  listAll(){
+    return this.http.get<Member[]>(environment.memberEndpoint)
   }
 }
