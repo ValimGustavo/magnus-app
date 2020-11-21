@@ -1,4 +1,4 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { THIS_EXPR, ThrowStmt } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -124,6 +124,25 @@ export class MemberFormComponent implements OnInit {
     }
   }
 
+  delete() {
+    this.memberService.delete(this.memberData).subscribe(
+      (response) => {
+
+        if(response.delete){
+          alert('deletado com sucesso');
+          this.router.navigate(['/member'])
+        }else{
+          alert('encontramos problemas para deletar o membro');
+          this.router.navigate(['/member'])
+        }
+        
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
   get isEditable() {
     switch (this.mode) {
       case modes.INFO:
@@ -153,17 +172,17 @@ export class MemberFormComponent implements OnInit {
     };
     this.memberService.updateMember(data).subscribe(
       (response) => {
-        console.log(response)
-        alert('a')
+        console.log(response);
+        alert('a');
       },
       (error) => {
-        console.log(error)
+        console.log(error);
       }
     );
   }
 
-  returnForList(){
-    this.router.navigate(['/member'])
+  returnForList() {
+    this.router.navigate(['/member']);
   }
 }
 

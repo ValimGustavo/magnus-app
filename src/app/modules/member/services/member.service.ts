@@ -28,5 +28,9 @@ export class MemberService {
     return this.http.put<Member>(environment.memberEndpoint + '/' + member.id, member)
   }
 
+  delete(member: Member){
+    
+    return this.http.delete<{delete: boolean}>(environment.memberEndpoint + '/' + member.id)
+  }
   
 }

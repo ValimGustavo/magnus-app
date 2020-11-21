@@ -79,7 +79,7 @@ export class MemberCreateComponent implements OnInit {
   }
 
   onCancel(){
-    this.router.navigate(['/login'])
+    this.router.navigate(['/member'])
   }
 
 

@@ -1,6 +1,6 @@
 <div *ngIf="mode == 'info'">
   <button (click)="editable()">Editar</button>
-  <button>Deletar</button>
+  <button (click)="delete()">Deletar</button>
 </div>
 
 <form class="mycontainer" [formGroup]="formMember">
