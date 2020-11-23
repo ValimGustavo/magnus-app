@@ -5,6 +5,8 @@ export const environment = {
   production: false,
   
   memberEndpoint: apiUrl + '/member',
-  orderEndpoint: apiUrl + '/order'
+  orderEndpoint: apiUrl + '/order',
+  levelEndpoint: apiUrl + '/level',
+  patentEndpoint: apiUrl + '/patent'
 
 };
