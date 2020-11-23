@@ -6,8 +6,7 @@ import { MemberCreateComponent } from './components/member-create/member-create.
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MemberReadComponent } from './components/member-read/member-read.component';
-import { MemberFormComponent } from './components/member-form/member-form.component'
-
+import { MemberFormComponent } from './components/member-form/member-form.component';
 
 @NgModule({
   declarations: [MemberCreateComponent, MemberReadComponent, MemberFormComponent],

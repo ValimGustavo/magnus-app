@@ -1,3 +1,4 @@
+import { OrderModule } from './modules/order/order.module';
 import { MemberModule } from './modules/member/member.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
@@ -16,7 +17,8 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     DashboardModule,
     SharedModule,
-    MemberModule
+    MemberModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
