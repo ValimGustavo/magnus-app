@@ -121,6 +121,7 @@ export class OrderFormComponent implements OnInit {
       (response) => {
         console.log(response);
         alert('a');
+        this.router.navigate(['/order'])
       },
       (error) => {
         console.log(error);
