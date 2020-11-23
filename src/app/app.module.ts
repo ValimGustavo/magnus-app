@@ -1,3 +1,4 @@
+import { PatentModule } from './modules/patent/patent.module';
 import { LevelModule } from './modules/level/level.module';
 import { OrderModule } from './modules/order/order.module';
 import { MemberModule } from './modules/member/member.module';
@@ -23,7 +24,8 @@ import { LevelFormComponent } from './modules/level/components/level-form/level-
     SharedModule,
     MemberModule,
     OrderModule,
-    LevelModule
+    LevelModule,
+    PatentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
